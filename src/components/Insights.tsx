@@ -75,11 +75,10 @@ const Insights: React.FC<InsightsProps> = ({ allCrops }) => {
                                 fill="#8884d8"
                                 dataKey="value"
                                 nameKey="name"
-                                // Fix: Coerce `percent` to a number to prevent type errors during multiplication.
                                 label={({ name, percent }) => `${name} ${(Number(percent || 0) * 100).toFixed(0)}%`}
                                 className="stroke-none"
                             >
-                                {cropCategoryDistribution.map((entry, index) => (
+                                {cropCategoryDistribution.map((_, index) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Pie>

@@ -27,7 +27,7 @@ export const generateChatResponse = async (prompt: string): Promise<string> => {
     try {
         const chatInstance = getChatInstance();
         const response = await chatInstance.sendMessage({ message: prompt });
-        return response.text;
+        return response.text ?? "Sorry, I could not generate a response. Please try again.";
     } catch (error) {
         console.error("Error generating chat response:", error);
         return "Sorry, I'm having trouble connecting to my knowledge base right now. Please try again later.";
