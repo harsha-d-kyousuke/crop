@@ -4,11 +4,10 @@ let chat: Chat | null = null;
 
 const getChatInstance = (): Chat => {
     if (!chat) {
-        // Fix: Adhere to Gemini API guidelines by using process.env.API_KEY exclusively.
-        if (!process.env.API_KEY) {
-            throw new Error("API_KEY environment variable not set");
+        if (!import.meta.env.VITE_API_KEY) {
+            throw new Error("VITE_API_KEY environment variable not set");
         }
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
         chat = ai.chats.create({
             model: 'gemini-2.5-flash',
             config: {
@@ -31,7 +30,6 @@ export const generateChatResponse = async (prompt: string): Promise<string> => {
         return response.text;
     } catch (error) {
         console.error("Error generating chat response:", error);
-        // Fix: Update error message to be more generic and user-friendly as per guidelines.
         return "Sorry, I'm having trouble connecting to my knowledge base right now. Please try again later.";
     }
 };

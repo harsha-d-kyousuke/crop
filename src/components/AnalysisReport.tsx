@@ -8,7 +8,7 @@ interface AnalysisReportProps {
     soilData: SoilData[];
 }
 
-// Fix: Add leaflet icon fix to prevent marker icon issues with bundlers.
+// Fix for default icon issue with webpack
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -16,29 +16,27 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
+
 const AnalysisReport: React.FC<AnalysisReportProps> = ({ farmData, soilData }) => {
     const mapRef = useRef<L.Map | null>(null);
     const mapContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // This is a workaround for a known issue with React's strict mode and Leaflet.
-        // It prevents the map from being initialized multiple times.
         if (mapContainerRef.current && !mapRef.current) {
-             mapRef.current = L.map(mapContainerRef.current);
-             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-             }).addTo(mapRef.current);
+            mapRef.current = L.map(mapContainerRef.current);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(mapRef.current);
         }
- 
+
         if (mapRef.current) {
             fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(farmData.fullAddress)}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data && data.length > 0 && mapRef.current) {
                         const { lat, lon } = data[0];
-                        const newView: L.LatLngTuple = [lat, lon];
-                        mapRef.current.setView(newView, 13);
-                        L.marker(newView).addTo(mapRef.current)
+                        mapRef.current.setView([lat, lon], 13);
+                        L.marker([lat, lon]).addTo(mapRef.current)
                             .bindPopup(farmData.fullAddress)
                             .openPopup();
                     } else if (mapRef.current) {
@@ -53,7 +51,7 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ farmData, soilData }) =
                 });
         }
         
-        // Fix: Add cleanup function to remove map instance on component unmount, preventing memory leaks.
+        // Cleanup function
         const map = mapRef.current;
         return () => {
             if (map) {
@@ -61,6 +59,7 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ farmData, soilData }) =
                 mapRef.current = null;
             }
         };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [farmData.fullAddress]);
 
@@ -90,8 +89,7 @@ const AnalysisReport: React.FC<AnalysisReportProps> = ({ farmData, soilData }) =
                 </div>
                 <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Precise Location Map</h3>
-                    {/* Fix: Added h-96 to ensure the map container has a height and is visible. */}
-                    <div ref={mapContainerRef} id="map" className="shadow-xl z-0 h-96"></div>
+                    <div ref={mapContainerRef} id="map" className="shadow-xl z-0"></div>
                      <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg">
                         <p className="font-semibold text-gray-800 dark:text-white">{farmData.fullAddress || 'Address not provided'}</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
