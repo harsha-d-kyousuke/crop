@@ -1,6 +1,5 @@
 # Smart Farm Planner Pro
 
-![Smart Farm Planner Pro Banner](https://img.freepik.com/free-photo/glowing-lines-human-heart-3d-shape-dark-background-generative-ai_191095-143.jpg?w=1380)
 
 **An AI-powered application for comprehensive soil analysis, intelligent crop recommendations, data-driven insights, and expert chatbot assistance for modern farming.**
 
