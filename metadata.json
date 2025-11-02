@@ -1,0 +1,7 @@
+{
+  "name": "Smart Farm Planner Pro",
+  "description": "An AI-powered application for comprehensive soil analysis, intelligent crop recommendations, data-driven insights, and expert chatbot assistance for modern farming.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

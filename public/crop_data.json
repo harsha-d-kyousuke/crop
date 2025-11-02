@@ -1,0 +1,36 @@
+
+[
+  {
+    "state": "Maharashtra", "district": "Nashik", "crop": "grapes", "crop_year": 2022, "season": "Rabi", "area": 1500, "production": 30000, "soil_ph_observed": 6.8, "soil_ph_optimal_min": 6.5, "soil_ph_optimal_max": 7.5, "rainfall_mm_observed": 700, "crop_min_rain_mm": 600, "crop_max_rain_mm": 800, "yield_kg_per_ha": 20000, "category": "fruits", "water_need": "Medium", "icon": "🍇"
+  },
+  {
+    "state": "Punjab", "district": "Ludhiana", "crop": "wheat", "crop_year": 2022, "season": "Rabi", "area": 2500, "production": 12500, "soil_ph_observed": 7.2, "soil_ph_optimal_min": 6.0, "soil_ph_optimal_max": 7.5, "rainfall_mm_observed": 350, "crop_min_rain_mm": 300, "crop_max_rain_mm": 400, "yield_kg_per_ha": 5000, "category": "cereals", "water_need": "Low", "icon": "🌾"
+  },
+  {
+    "state": "Gujarat", "district": "Junagadh", "crop": "groundnut", "crop_year": 2021, "season": "Kharif", "area": 3000, "production": 6000, "soil_ph_observed": 7.8, "soil_ph_optimal_min": 6.0, "soil_ph_optimal_max": 7.5, "rainfall_mm_observed": 800, "crop_min_rain_mm": 600, "crop_max_rain_mm": 1000, "yield_kg_per_ha": 2000, "category": "cash", "water_need": "Medium", "icon": "🥜"
+  },
+  {
+    "state": "Andhra Pradesh", "district": "Guntur", "crop": "chilli", "crop_year": 2022, "season": "Rabi", "area": 1800, "production": 9000, "soil_ph_observed": 6.5, "soil_ph_optimal_min": 6.0, "soil_ph_optimal_max": 7.0, "rainfall_mm_observed": 900, "crop_min_rain_mm": 800, "crop_max_rain_mm": 1200, "yield_kg_per_ha": 5000, "category": "vegetables", "water_need": "High", "icon": "🌶️"
+  },
+  {
+    "state": "Madhya Pradesh", "district": "Ujjain", "crop": "soyabean", "crop_year": 2021, "season": "Kharif", "area": 5000, "production": 7500, "soil_ph_observed": 7.0, "soil_ph_optimal_min": 6.0, "soil_ph_optimal_max": 7.0, "rainfall_mm_observed": 1000, "crop_min_rain_mm": 800, "crop_max_rain_mm": 1200, "yield_kg_per_ha": 1500, "category": "pulses", "water_need": "Medium", "icon": "🌱"
+  },
+  {
+    "state": "Maharashtra", "district": "Pune", "crop": "sugarcane", "crop_year": 2022, "season": "Annual", "area": 4000, "production": 400000, "soil_ph_observed": 7.5, "soil_ph_optimal_min": 6.5, "soil_ph_optimal_max": 7.5, "rainfall_mm_observed": 1200, "crop_min_rain_mm": 1100, "crop_max_rain_mm": 1500, "yield_kg_per_ha": 100000, "category": "cash", "water_need": "Very High", "icon": "🌿"
+  },
+  {
+    "state": "Kerala", "district": "Idukki", "crop": "cardamom", "crop_year": 2022, "season": "Annual", "area": 500, "production": 250, "soil_ph_observed": 5.5, "soil_ph_optimal_min": 5.0, "soil_ph_optimal_max": 6.5, "rainfall_mm_observed": 2000, "crop_min_rain_mm": 1500, "crop_max_rain_mm": 2500, "yield_kg_per_ha": 500, "category": "cash", "water_need": "High", "icon": "🍃"
+  },
+  {
+    "state": "Uttar Pradesh", "district": "Meerut", "crop": "potato", "crop_year": 2022, "season": "Rabi", "area": 2000, "production": 60000, "soil_ph_observed": 6.2, "soil_ph_optimal_min": 5.5, "soil_ph_optimal_max": 7.0, "rainfall_mm_observed": 150, "crop_min_rain_mm": 100, "crop_max_rain_mm": 200, "yield_kg_per_ha": 30000, "category": "vegetables", "water_need": "Medium", "icon": "🥔"
+  },
+  {
+    "state": "Maharashtra", "district": "Jalgaon", "crop": "banana", "crop_year": 2021, "season": "Annual", "area": 1200, "production": 72000, "soil_ph_observed": 7.0, "soil_ph_optimal_min": 6.5, "soil_ph_optimal_max": 7.5, "rainfall_mm_observed": 850, "crop_min_rain_mm": 800, "crop_max_rain_mm": 1000, "yield_kg_per_ha": 60000, "category": "fruits", "water_need": "High", "icon": "🍌"
+  },
+  {
+    "state": "Punjab", "district": "Amritsar", "crop": "rice", "crop_year": 2022, "season": "Kharif", "area": 3000, "production": 12000, "soil_ph_observed": 6.9, "soil_ph_optimal_min": 5.5, "soil_ph_optimal_max": 7.0, "rainfall_mm_observed": 700, "crop_min_rain_mm": 600, "crop_max_rain_mm": 800, "yield_kg_per_ha": 4000, "category": "cereals", "water_need": "Very High", "icon": "🍚"
+  },
+  {
+    "state": "Maharashtra", "district": "Aurangabad", "crop": "cauliflower", "crop_year": 2020, "season": "Kharif", "area": 164.77, "production": 627.29, "soil_ph_observed": 7.57, "soil_ph_optimal_min": 6, "soil_ph_optimal_max": 7, "rainfall_mm_observed": 477.7, "crop_min_rain_mm": 720, "crop_max_rain_mm": 1442, "yield_kg_per_ha": 3807, "category": "vegetables", "water_need": "Medium", "icon": "🥦"
+  }
+]
